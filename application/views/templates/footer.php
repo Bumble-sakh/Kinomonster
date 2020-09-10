@@ -1,8 +1,7 @@
 <!-- Footer start -->  
 </div>
 
-
-
+<?php $this->load->view('templates/menu'); ?>
 
 </div>
 
