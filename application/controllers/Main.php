@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access alowed');
 class Main extends MY_Controller {
 
     public function __construct() {
-        parent::__construct;
+        parent::__construct();
     }
 
     public function index() {
