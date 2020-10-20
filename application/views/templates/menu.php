@@ -57,45 +57,14 @@
         
         <ul class="list-group">
           
-          <li class="list-group-item list-group-warning">
-            <span class="badge">8.9</span>
-            <a href="show.html">Интерстеллар</a>
-          </li>
-
-          <li class="list-group-item list-group-warning">
-            <span class="badge">8.7</span>
-            <a href="#">Безумный макс</a>
-          </li>                  
-
-          <li class="list-group-item list-group-warning">
-            <span class="badge">8.3</span>
-            <a href="#">Матрица</a>
-          </li>                  
-
-          <li class="list-group-item list-group-warning">
-            <span class="badge">8.1</span>
-            <a href="#">Облачный атлас</a>
-          </li>
-
-          <li class="list-group-item list-group-warning">
-            <span class="badge">8.9</span>
-            <a href="show.html">Интерстеллар</a>
-          </li>
-
-          <li class="list-group-item list-group-warning">
-            <span class="badge">8.7</span>
-            <a href="#">Безумный макс</a>
-          </li>                  
-
-          <li class="list-group-item list-group-warning">
-            <span class="badge">8.3</span>
-            <a href="#">Матрица</a>
-          </li>                  
-
-          <li class="list-group-item list-group-warning">
-            <span class="badge">8.1</span>
-            <a href="#">Облачный атлас</a>
-          </li>
+          <?php
+          foreach ($films as $key => $value) {
+            echo '<li class="list-group-item list-group-warning">';
+            echo '<span class="badge">'.$value['rating'].'</span>';
+            echo '<a href="show.html">'.$value['name'].'</a>';
+            echo '</li>';
+          }
+          ?>          
 
         </ul>
 
