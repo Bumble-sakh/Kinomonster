@@ -61,7 +61,7 @@
             <div id="navbarCollapse" class="collapse navbar-collapse navbar-right">
               
               <ul class="nav nav-pills">
-                <li class="active"> <a href="index.html">Главная</a> </li>
+                <li class="active"> <a href="/">Главная</a> </li>
                 <li> <a href="films.html">Фильмы</a> </li>
                 <li> <a href="#">Сериалы</a> </li>
                 <li> <a href="rating.html">Рейтинг фильмов</a> </li>

@@ -61,7 +61,7 @@
           foreach ($films as $key => $value) {
             echo '<li class="list-group-item list-group-warning">';
             echo '<span class="badge">'.$value['rating'].'</span>';
-            echo '<a href="show.html">'.$value['name'].'</a>';
+            echo '<a href="/movies/'.$value['slug'].'">'.$value['name'].'</a>';
             echo '</li>';
           }
           ?>          

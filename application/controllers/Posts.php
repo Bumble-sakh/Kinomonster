@@ -28,6 +28,7 @@ class Posts extends MY_Controller {
 
 		$this->data['title'] = $this->data['posts_item']['title'];
 		$this->data['content'] = $this->data['posts_item']['text'];
+		$this->data['slug'] = $this->data['posts_item']['slug'];
 
 		$this->load->view('templates/header', $this->data);
 		$this->load->view('posts/view', $this->data);
