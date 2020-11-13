@@ -29,4 +29,52 @@ class Movies extends MY_Controller {
 
     }
 
+    public function type($slug = NULL) {
+
+        $this->data['movie_data'] = null;
+
+        if($slug == 'films') {
+            $this->data['title'] = 'Фильмы';
+            $this->data['movie_data'] = $this->films_model->getFilms(FALSE, 10, 1);
+        }
+
+        if($slug == 'serials') {
+            $this->data['title'] = 'Сериалы';
+            $this->data['movie_data'] = $this->films_model->getFilms(FALSE, 10, 2);
+        }
+
+        if($this->data['movie_data'] == null) {
+            show_404();
+        }
+
+        $this->load->view('templates/header', $this->data);
+        $this->load->view('movies/type', $this->data);
+        $this->load->view('templates/footer', $this->data);
+
+    }
+
+    public function raiting($slug = NULL) {
+
+        $this->data['movie_data'] = null;
+
+        if($slug == 'films') {
+            $this->data['title'] = 'Рейтинг фильмов';
+            $this->data['movie_data'] = $this->films_model->getFilmsByRating(10, 1);
+        }
+
+        if($slug == 'serials') {
+            $this->data['title'] = 'Рейтинг сериалов';
+            $this->data['movie_data'] = $this->films_model->getFilmsByRating(10, 2);
+        }
+
+        if($this->data['movie_data'] == null) {
+            show_404();
+        }
+
+        $this->load->view('templates/header', $this->data);
+        $this->load->view('movies/raiting', $this->data);
+        $this->load->view('templates/footer', $this->data);
+
+    }
+
 }

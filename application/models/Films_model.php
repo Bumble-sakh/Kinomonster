@@ -21,10 +21,10 @@ class Films_model extends CI_Model {
         return $query->row_array();
     }
 
-    public function getFilmsByRating($limit) {
+    public function getFilmsByRating($limit, $category = 1) {
         $query = $this->db
             ->order_by('rating', 'desc')
-            ->where('category_id', 1)
+            ->where('category_id', $category)
             ->where('rating >', 0)
             ->limit($limit)
             ->get('movie');
