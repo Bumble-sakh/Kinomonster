@@ -61,11 +61,13 @@
             <div id="navbarCollapse" class="collapse navbar-collapse navbar-right">
               
               <ul class="nav nav-pills">
-                <li class="active"> <a href="/">Главная</a> </li>
-                <li> <a href="/movies/type/films/">Фильмы</a> </li>
-                <li> <a href="/movies/type/serials/">Сериалы</a> </li>
-                <li> <a href="/movies/raiting/films/">Рейтинг фильмов</a> </li>
-                <li> <a href="contact.html">Контакты</a> </li>
+
+                <li <?php  echo show_active_menu(0); ?>> <a href="/">Главная</a> </li>
+                <li <?php  echo show_active_menu('/type/films'); ?>> <a href="/movies/type/films/">Фильмы</a> </li>
+                <li <?php  echo show_active_menu('/type/serials'); ?>> <a href="/movies/type/serials/">Сериалы</a> </li>
+                <li <?php  echo show_active_menu('/raiting/films'); ?>> <a href="/movies/raiting/films/">Рейтинг фильмов</a> </li>
+                <li <?php  echo show_active_menu('/raiting/serials'); ?>> <a href="/movies/raiting/serials/">Рейтинг сериалов</a> </li>
+                <li <?php  echo show_active_menu('contacts'); ?>> <a href="contact.html">Контакты</a> </li>
 
               </ul>
 
