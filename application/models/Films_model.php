@@ -21,14 +21,21 @@ class Films_model extends CI_Model {
         return $query->row_array();
     }
 
-    public function getFilmsByRating($limit, $category = 1) {
+    public function getFilmsByRating($row_count, $offset, $category = 1) {
         $query = $this->db
             ->order_by('rating', 'desc')
             ->where('category_id', $category)
-            ->where('rating >', 0)
-            ->limit($limit)
-            ->get('movie');
+            ->get('movie', $row_count, $offset);
 
+        return $query->result_array();
+    }
+
+    public function getMoviesOnPage($row_count, $offset, $type = 1) {
+         $query = $this->db
+            ->order_by('add_date', 'desc')
+            ->where('category_id', $type)
+            ->get('movie', $row_count, $offset);
+        
         return $query->result_array();
     }
 
