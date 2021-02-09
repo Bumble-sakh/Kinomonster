@@ -21,12 +21,12 @@
     <div class="panel-heading"><div class="sidebar-header">Вход</div></div>
     <div class="panel-body">
 
-      <form role="form">
+      <form role="form" action="" method="post">
         <div class="form-group">
-          <input type="text"  class="form-control input-lg" placeholder="Логин">
+          <input type="text"  class="form-control input-lg" placeholder="Логин" name="username">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control input-lg" placeholder="Пароль">
+          <input type="password" class="form-control input-lg" placeholder="Пароль" name="password">
         </div>
 
         <button type="submit" class="btn btn-warning pull-right">вход</button>
