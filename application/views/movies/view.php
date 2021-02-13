@@ -21,22 +21,29 @@
 
           <div class="margin-8"></div>
 
-          <h2>Отзывы об <?php echo $title; ?></h2>
+          <h2>Отзывы о <?php echo $title; ?></h2>
           <hr>
 
-          <div class="panel panel-info">
-            <div class="panel-heading"><i class="glyphicon glyphicon-user"></i> <span>Сергей</span> </div>
-            <div class="panel-body">
-              Отличный фильм, 3 часа пролетели не заметно.
-            </div>
-          </div>
+          <?php
+            foreach ($comments as $key => $value) {
+              echo '<div class="panel panel-info">';
+              echo '  <div class="panel-heading"><i class="glyphicon glyphicon-user"></i> <span>'.getUserNameById($value['user_id']).'</span> </div>';
+              echo '    <div class="panel-body">';
+              echo '      '.$value['comment_text'];
+              echo '    </div>';
+              echo '</div>';
+            }
+          ?>
 
-          <form>
-            <div class="form-group">
-              <input type="text" placeholder="ваше имя" class="form-control input-lg">
-            </div>
+          <?php
+          if ($this->dx_auth->is_logged_in()) {
+          echo '
+          <form action = "/comments/add/" method="post">
             <div class="form-group">
               <textarea class="form-control"></textarea>
             </div>
             <button class="btn btn-lg btn-warning pull-right">отправить</button>
           </form>
+          ';
+          }
+          ?>
